@@ -23,18 +23,16 @@ let convertLiteralsToInts (string:string) =
         .Replace("eight", "8")
         .Replace("nine", "9")
     
-    
 let sumFirstAndLast (listOfNumOrNot:seq<int>) =
    match listOfNumOrNot with
                     | a when Seq.length a = 1 -> (Seq.item 0 a) * 11
                     | b when Seq.length b < 1 -> 0
                     | c when Seq.length c > 1 -> ((Seq.item 0 c) * 10) + Seq.last c
                     | _ -> 0
+                    
 let sumEachFirstAndLast (listOfListOfNumOrNot:seq<seq<int>>) =
     listOfListOfNumOrNot
     |> Seq.map sumFirstAndLast
-    
-
     
 let isNumeral (c:char) =
     match c with
@@ -61,6 +59,7 @@ let toInt (c:char) =
         | n when n = '8' -> 8
         | n when n = '9' -> 9
         | _ -> 0
+        
 let puzzleAnswer =
     input
     |> Seq.map(convertLiteralsToInts)
@@ -69,8 +68,6 @@ let puzzleAnswer =
     |> sumEachFirstAndLast
     |> Seq.sum
     
-let toString object =
-    object.ToString()
 let intermediary =
     input
     |> Seq.iter (fun i ->
@@ -78,9 +75,4 @@ let intermediary =
         printf $"{convertLiteralsToInts i} - "
         printf $"{i |> convertLiteralsToInts |> Seq.filter(isNumeral) |> Seq.toArray |> System.String   } - "
         printfn $"{i |> convertLiteralsToInts |> Seq.filter(isNumeral) |> Seq.map(toInt) |> sumFirstAndLast  } - "
-        
         )
-    (*|> Seq.map(Seq.filter(isNumeral))
-    |> Seq.map(Seq.map(toInt))
-    |> sumEachFirstAndLast
-    |> Seq.sum   *)

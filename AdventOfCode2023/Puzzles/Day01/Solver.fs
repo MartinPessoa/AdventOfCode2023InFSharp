@@ -34,6 +34,7 @@ let sumEachFirstAndLast (listOfListOfNumOrNot:seq<seq<int>>) =
                             | a when Seq.length a = 1 -> (Seq.item 0 a) * 11
                             | b when Seq.length b < 1 -> 0
                             | c when Seq.length c > 1 -> ((Seq.item 0 c) * 10) + Seq.last c)
+    
 let sumAllSums (listInts:seq<int>) =
     listInts
     |> Seq.sum
@@ -44,5 +45,4 @@ let puzzleAnswer =
     |> Seq.map(onlyNums)
     |> sumEachFirstAndLast
     |> sumAllSums
-    
-    
+        
