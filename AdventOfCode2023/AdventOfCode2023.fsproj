@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <WarnOn>3390;$(WarnOn)</WarnOn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Puzzles\Common.fs" />
+        <Compile Include="Puzzles\Day01\Solver.fs" />
+        <Content Include="Puzzles\Day01\input.txt" />
+        <Compile Include="Puzzles\Day01\SolverPart2.fs" />
+        <Compile Include="Program.fs"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Puzzles\Common\**" />
+    </ItemGroup>
+
+</Project>
