@@ -11,6 +11,8 @@
         <Compile Include="Puzzles\Day01\Solver.fs" />
         <Content Include="Puzzles\Day01\input.txt" />
         <Compile Include="Puzzles\Day01\SolverPart2.fs" />
+        <Compile Include="Puzzles\Day02\SolverPart1.fs" />
+        <Content Include="Puzzles\Day02\input.txt" />
         <Compile Include="Program.fs"/>
     </ItemGroup>
 
